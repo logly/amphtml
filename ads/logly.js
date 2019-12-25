@@ -27,6 +27,8 @@ export function logly(global, data) {
   d.id = 'logly-lift-' + data['adspotid'];
   global.document.getElementById('c').appendChild(d);
 
+  global['_lgy_lw_imp_url'] = global.context.canonicalUrl;
+
   const url =
     'https://l.logly.co.jp/lift_widget.js' +
     `?adspot_id=${encodeURIComponent(data['adspotid'])}`;
