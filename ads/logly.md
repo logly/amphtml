@@ -25,6 +25,7 @@ limitations under the License.
   type="logly"
   layout="responsive"
   data-adspotid="123456"
+  data-url="https://..."
 >
 </amp-ad>
 ```
@@ -36,3 +37,4 @@ For configuration details, please contact [LOGLY](https://www.logly.co.jp/forms/
 Supported parameters:
 
 - `data-adspotid`
+- `data-url`

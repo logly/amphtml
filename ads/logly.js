@@ -21,15 +21,18 @@ import {loadScript, validateData} from '../3p/3p';
  * @param {!Object} data
  */
 export function logly(global, data) {
-  validateData(data, ['adspotid']);
+  validateData(data, ['adspotid'], ['url']);
 
   const d = global.document.createElement('div');
   d.id = 'logly-lift-' + data['adspotid'];
   global.document.getElementById('c').appendChild(d);
 
+  const urlParam = data['url'] || window.context.canonicalUrl;
+
   const url =
     'https://l.logly.co.jp/lift_widget.js' +
-    `?adspot_id=${encodeURIComponent(data['adspotid'])}`;
+    `?adspot_id=${encodeURIComponent(data['adspotid'])}` +
+    `&url=${encodeURIComponent(urlParam)}`;
 
   loadScript(global, url);
 }
